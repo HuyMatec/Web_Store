@@ -1,0 +1,11 @@
+body{
+    background-image: url(/img/gioithieu.jpg);
+}
+h3{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+h2{
+    text-align: center;
+    color: yellow;
+}

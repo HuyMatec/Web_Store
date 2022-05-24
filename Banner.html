@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner</title>
+    
+    <link rel="stylesheet" href="Banner.css">
+    <script>
+        {/* khai báo biến slideIndex đại diện cho slide hiện tại */}
+            var slideIndex;
+        {/* Khai bào hàm hiển thị slide */}
+          function showSlides() 
+          {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                 slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+         
+              slides[slideIndex].style.display = "block";  
+              dots[slideIndex].className += " active";
+            //   Chuyển đến slide tiếp theo
+              slideIndex++;
+            //   Nếu đang ở slide cuối cùng thì chuyển về slide đầu
+              if (slideIndex > slides.length - 1) {
+                slideIndex = 0
+              }    
+            //   Tự động chuyển đổi slide sau 5s
+              setTimeout(showSlides, 5000);
+          }
+          
+          //Mặc định hiển thị slide đầu tiên 
+          showSlides(slideIndex = 0);
+         
+         
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
+<div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./img/banner0.jpg" style="width:1240px; height:340px">
+    </div>
+   
+    <div class="mySlides fade">
+      <img src="./img/banner1.jpg" style="width:1240px; height:340px">
+    </div>
+   
+    <div class="mySlides fade">
+      <img src="./img/banner2.jpg" style="width:1240px; height:340px">
+    </div>
+  </div>
+  <br>
+   
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(0)"></span> 
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+  </div>

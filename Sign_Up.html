@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="Sign_Up.css">
+</head>
+
+<body>
+    <form action="" onsubmit="kiemtra()">
+        <table width="468" border="2" cellpadding="5" align="center">
+
+            <tr>
+                <th colspan="2">ĐĂNG KÝ</th>
+            </tr>
+            <script>
+                function hien_thi(check) {
+                    var other_nguoisudung = document.getElementById("other_nguoisudung");
+                    other_nguoisudung.style.display = check ? "" : "none";
+                }
+                function kiemtra() {
+                    let count = 0;
+                    var fullname = document.getElementById("fullname");
+                    var username = document.getElementById("username");
+                    var password = document.getElementById("password");
+                    var nhaplaipassword = document.getElementById("nhaplaipassword");
+                    var genders = document.getElementsByName("gender");
+                    var ngaysinh = document.getElementById("ngaysinh");
+                    var diachi = document.getElementById("diachi");
+                    var thongtincanhan = document.getElementById("thongtincanhan");
+                    var nguoisudung = document.getElementsByName("nguoisudung");
+                    if (fullname.value.length == 0) {
+                        alert("Chưa nhập Full Name !");
+                    }
+                    if (username.value.length == 0) {
+                        alert("Chưa nhập User Name !");
+                    }
+                    if (password.value.length == 0) {
+                        alert("Chưa nhập Password !");
+                    }
+                    if (nhaplaipassword.value.length == 0) {
+                        alert("Chưa Nhập lại Password !");
+                    }
+                    if (!genders[0].checked && !genders[1].checked) {
+                        alert("Chưa chọn Giới tính !");
+                    }
+                    if (date.value == "") {
+                        alert("Chưa chọn Ngày sinh !");
+                    }
+                    if (diachi.value.length == 0) {
+                        alert("Chưa nhập Địa chỉ !");
+                    }
+                    if (thongtincanhan.value.length == 0) {
+                        alert("Chưa chọn tệp !");
+                    }
+                    for (let i = 0; i < nguoisudung.length; i++) {
+                        if (nguoisudung[i].checked) {
+                            count++;
+                        }
+                    }
+                    if (count < 1) {
+                        alert("Bạn chưa tích vào Người sử dụng !");
+                    }
+                }
+            </script>
+            <td>Full Name</td>
+            <td>
+                <input id="fullname" type="text" name="Fullname" size="36" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif " placeholder="Nhập đầy đủ họ tên">
+            </td>
+            </tr>
+
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input id="username" type="text" name="User" size="33" style="font-family:Arial, Helvetica, sans-serif ; " placeholder="Nhập tên đăng nhập">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input id="password" type="Password" name="Pass" size="36" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; " placeholder="Nhập mật khẩu">
+                </td>
+            </tr>
+
+            <tr>
+                <td>RePassword</td>
+                <td>
+                    <input id="nhaplaipassword" type="Password" name="RePass" size="36" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; " placeholder="Nhập lại mật khẩu">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <label><input type="radio" name="gender">Nam</label>
+                    <label><input type="radio" name="gender">Nữ</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ngày sinh</td>
+                <td>
+                    <label>
+                        <input type="date" id="date">
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Địa chỉ</td>
+                <td>
+                    <textarea id="diachi" placeholder="Nhập địa chỉ của bạn..."  type="text" col="20" style="width: 250px ; height: 30px "></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="height: 60px" align="center">CMND/CCCD<br>Mặt Trước<br>Mặt Sau</td>
+                <td>
+                    <input id="thongtincanhan" type="File" name="MatTruoc">
+                    <input id="thongtincanhan" type="File" name="MatSau">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Người sử dụng</td>
+                <td>
+                    <label>
+                        <input name="nguoisudung" type="Checkbox"> Người mới
+                    </label>
+
+                    <label>
+                        <input name="nguoisudung" type="Checkbox"> Đã sử dụng qua vài tuần
+                    </label>
+                    <br>
+                    <label>
+                        <input name="nguoisudung" type="Checkbox"> Đã sử dụng qua vài tháng hoặc vài năm
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="Reset" name="Reset" value="Reset"> &nbsp;&nbsp;
+                    <input type="Submit" name="Sign Up" value=" Sign Up ">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>

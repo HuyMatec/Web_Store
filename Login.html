@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+    <form action="" onsubmit="kiemtra()">
+
+        <table width="468" border="2" cellpadding="5" align="center">
+
+            <tr>
+                <th colspan="2">ĐĂNG NHẬP</th>
+            </tr>
+            <script>
+                function kiemtra() {
+                    var username = document.getElementById("username");
+                    var password = document.getElementById("password");
+                    if (username.value.length == 0) {
+                        alert("Chưa nhập User Name !");
+                    }
+                    if (password.value.length == 0) {
+                        alert("Chưa nhập Password !");
+                    }
+                }
+            </script>
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input id="username" type="text" name="user" size="30" placeholder="Nhập tên đăng nhập">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input id="password" type="password" name="pass" size="30" placeholder="Nhập mật khẩu">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="Reset" name="Reset" value="Reset"> &nbsp;&nbsp;
+                    <input type="Submit" name="Login" value="Login">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+
+</html>
